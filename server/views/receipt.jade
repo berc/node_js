@@ -1,0 +1,30 @@
+doctype html
+html
+head
+title=title
+body
+    h1 Receipt
+
+    table(style='border:black solid 1px')
+        thead
+            tr
+                th(style='border-bottom:black solid 1px;padding-left:1em;') Name
+                th(style='border-bottom:black solid 1px;padding-left:1em;text-align:right') Count
+                th(style='border-bottom:black solid 1px;padding-left:1em;text-align:right') Unit price
+                th(style='border-bottom:black solid 1px;padding-left:1em;text-align:right') Sum price
+
+        tbody
+            each item in basket.items
+                tr
+                    td=item.name
+                    td(style='text-align:right;padding-left:1em;')=item.count
+                    td(style='text-align:right;padding-left:1em;')=item.unitPrice
+                    td(style='text-align:right;padding-left:1em;')=item.sumPrice
+
+            tr
+                td(style='border-top:black solid 1px;') Total price *
+                td(style='border-top:black solid 1px;text-align:right')
+                td(style='border-top:black solid 1px;text-align:right')
+                td(style='border-top:black solid 1px;text-align:right')=basket.totalSum
+
+    p * total price is after calculating with discount

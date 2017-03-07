@@ -1,0 +1,19 @@
+@import '~@angular/material/core/theming/prebuilt/pink-bluegrey.scss';
+
+html, body{
+  padding: 0px; 
+  margin: 0px; 
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+app {
+    display:flex;
+    flex-direction: column;
+}
+
+router-outlet {
+   flex: 1;
+}
+
+
+
