@@ -23,10 +23,10 @@ from server folder for running live reload environment
 nodemon ./bin/www.js
 ```
 
-Go to the http://localhost:4300/ in your browser
+go to the http://localhost:4300/ in your browser
 
 
-In server folder is needed for continuous ts development
+for continuous ts development you can run
 ```bash
 tsc -w **/*.ts
 ```
