@@ -1,4 +1,4 @@
--- nodemon ./bin/www/js from server folder for running live reload environment
+-- nodemon ./bin/www.js from server folder for running live reload environment
 
 -- tsc -w **/*.ts in server folder is also needed for continuous ts development
 
