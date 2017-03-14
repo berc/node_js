@@ -1,6 +1,8 @@
 -- nodemon ./bin/www.js from server folder for running live reload environment
 
--- tsc -w **/*.ts in server folder is also needed for continuous ts development
+-- go to the http://localhost:4300/ 
+
+-- tsc -w **/*.ts in server folder is needed for continuous ts development
 
 -- based on @angularclass/angular2-webpack-starter + express with TypeScript
 
