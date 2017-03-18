@@ -1,5 +1,0 @@
-<h3> <a [routerLink]="['/']"> &lt; back</a> </h3>
-<progress *ngIf="!isLoading"></progress>
-<ul *ngIf="basketItems.length">
-	<driver-item *ngFor="let item of basketItems" [data]="item.name"><{{basketItem | json}}/driver-item>
-</ul>

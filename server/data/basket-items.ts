@@ -3,7 +3,7 @@
  */
 
 export let basketItems = [
-  'Apple'
+  'Apple',
   'Apple',
   'Apple',
   'Orange',

@@ -11,9 +11,9 @@ const basketCalculateRouter: Router = Router();
 basketCalculateRouter.get('/calculate', (request: Request, response: Response) => {
 
   let basketCalculator = new BasketCalculator();
-  let calculatedPrice = basketCalculator.generateBasketReceipt(basketItems);
+  let receipt = basketCalculator.generateBasketReceipt(basketItems);
 
-  response.json( { totalSum: calculatedPrice } );
+  response.json( receipt );
 });
 
 export { basketCalculateRouter }

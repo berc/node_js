@@ -10,14 +10,14 @@ var BasketCalculator = (function () {
     BasketCalculator.prototype.generateBasketReceipt = function (basketItems) {
         var _this = this;
         var items = {};
-        basketItems.forEach(function (o) { _this.increaseItemCount(items, o); });
-        var calcItems = [];
-        Object.keys(items).forEach(function (name) { calcItems.push({ name: name, count: items[name] }); });
-        var totalSum = this.calculateSum(calcItems);
-        return {
-            items: calcItems,
-            totalSum: totalSum
+        var receipt = {
+            items: [],
+            totalSum: 0
         };
+        basketItems.forEach(function (o) { _this.increaseItemCount(items, o); });
+        Object.keys(items).forEach(function (name) { receipt.items.push({ name: name, count: items[name] }); });
+        receipt.totalSum = this.calculateSum(receipt.items);
+        return receipt;
     };
     BasketCalculator.prototype.increaseItemCount = function (items, item) {
         if (!items[item]) {

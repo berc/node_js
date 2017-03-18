@@ -1,0 +1,28 @@
+<p *ngIf="isLoading">loading receipt, please wait...</p>
+
+<h1>Receipt</h1>
+<table *ngIf="receipt && receipt.items.length > 0" class="receipt-table">
+<thead>
+	<tr>
+		<th class="receipt-cell receipt-cell--border-bottom">Name</th>
+		<th class="receipt-cell receipt-cell--border-bottom text-align-right">Count</th>
+		<th class="receipt-cell receipt-cell--border-bottom text-align-right">Unit price</th>
+		<th class="receipt-cell receipt-cell--border-bottom text-align-right">Sum price</th>
+	</tr>
+</thead>
+<tbody>
+	<tr *ngFor="let item of receipt.items">
+		<td class="receipt-cell">{{item.name}}</td>
+		<td class="receipt-cell text-align-right">{{item.count}}</td>
+		<td class="receipt-cell text-align-right">{{item.unitPrice}}</td>
+		<td class="receipt-cell text-align-right">{{item.sumPrice}}</td>
+	</tr>
+	<tr>
+		<td class="receipt-cell receipt-cell--border-top">Total price*</td>
+		<td class="receipt-cell receipt-cell--border-top text-align-right"></td>
+		<td class="receipt-cell receipt-cell--border-top text-align-right"></td>
+		<td class="receipt-cell receipt-cell--border-top text-align-right">{{receipt.totalSum}}</td>
+	</tr>
+</tbody>
+</table>
+<p>* total price is after calculating with discount</p>

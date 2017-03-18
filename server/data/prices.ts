@@ -11,7 +11,7 @@ export interface Price {
   };
 }
 
-export var prices: Price[] = [
+export let prices: Price[] = [
   {
     name: 'Apple',
     price: 0.25

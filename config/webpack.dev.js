@@ -229,12 +229,26 @@ module.exports = function (options) {
      * See: https://webpack.github.io/docs/webpack-dev-server.html
      */
     devServer: {
+      quiet: false,
+      stats: { colors: true },
       port: METADATA.port,
       host: METADATA.host,
       historyApiFallback: true,
       watchOptions: {
         aggregateTimeout: 300,
         poll: 1000
+      },
+      proxy: {
+        "/api": {
+          "target": {
+            "host": "localhost",
+            "protocol": 'http:',
+            "port": 4300
+          },
+          ignorePath: false,
+          changeOrigin: true,
+          secure: false
+        }
       }
     },
 

@@ -1,25 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
+import { Receipt } from '../../../shared/model/receipt';
 
 @Injectable()
 export class BasketService {
 
-    constructor( private http: Http ) {}
+    private urlPrefix = '/api/v1';
 
-    public getAll(): Observable<Object[]>  {
+    constructor( private http: Http) {}
 
-        return this.http.get('/api/v1/basket/list/')
-            .map((rs: Response) => rs.json())
-            .catch( (error: Response | any) => Observable.throw(error.json()));
-
-    }
-
-    public getCalculatedSum(): Observable<Object[]>  {
-
-        return this.http.get('http://localhost:4300/api/v1/basket/list')
-            .map((rs: Response) => rs.json())
-            .catch( (error: Response | any) => Observable.throw(error.json()));
-
+    public getReceipt(): Observable<Receipt>  {
+        return this.http.get(`${this.urlPrefix}/basket/calculate`)
+            .map( (rs: Response) => rs.json() )
+            .catch( (error: Response | any) => Observable.throw(error.json()) );
     }
 }

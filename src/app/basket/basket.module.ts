@@ -1,18 +1,15 @@
-
-import { NgModule  } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { DriverItemComponent } from './item/driver-item.component';
-import { BasketListComponent } from './list/basket-list.component';
+import { NgModule } from '@angular/core';
 
 import { BasketService } from './basket.service';
-import { driverRouting } from './basket.routes';
+import { basketRouting } from './basket.routes';
+import { BasketComponent } from './basket.component';
 
 @NgModule({
-  imports: [ CommonModule, driverRouting ],
-  declarations: [ DriverItemComponent, BasketListComponent ],
+  imports: [ CommonModule, basketRouting ],
+  declarations: [ BasketComponent ],
   providers: [ BasketService ],
-  exports: [ BasketListComponent ]
+  exports: [ BasketComponent ]
 })
-export class DriverModule {
+export class BasketModule {
 }

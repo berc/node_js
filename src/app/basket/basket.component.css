@@ -1,0 +1,18 @@
+:host { 
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.receipt-table {
+    border: black solid 1px;
+}
+
+.receipt-cell {
+    padding-left: 1em;
+}
+.receipt-cell--border-top {
+    border-top: black solid 1px;
+}
+.receipt-cell--border-bottom {
+    border-bottom: black solid 1px;
+}

@@ -9,6 +9,6 @@ var basketCalculateRouter = express_1.Router();
 exports.basketCalculateRouter = basketCalculateRouter;
 basketCalculateRouter.get('/calculate', function (request, response) {
     var basketCalculator = new basket_calculator_service_1.BasketCalculator();
-    var calculatedPrice = basketCalculator.generateBasketReceipt(basket_items_1.basketItems);
-    response.json({ totalSum: calculatedPrice });
+    var receipt = basketCalculator.generateBasketReceipt(basket_items_1.basketItems);
+    response.json(receipt);
 });

@@ -1,10 +1,8 @@
 import { RouterModule, Routes } from '@angular/router';
-import { BasketListComponent } from './list/basket-list.component';
+import { BasketComponent } from './basket.component';
 
-const driverRoutes: Routes = [
-    {
-    path: 'basket/', component: BasketListComponent
-    }
-];
+const basketRoutes: Routes = [{
+    path: '', component: BasketComponent
+}];
 
-export const driverRouting = RouterModule.forChild( driverRoutes );
+export const basketRouting = RouterModule.forChild( basketRoutes );

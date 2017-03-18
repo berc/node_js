@@ -4,26 +4,26 @@
 
 import { prices } from '../../data/prices';
 import * as _ from 'lodash';
+import { Receipt } from '../../../shared/model/receipt';
 
 export class BasketCalculator {
 
-  public generateBasketReceipt (basketItems) {
+  public generateBasketReceipt(basketItems: string[]): Receipt {
     let items = {};
+    let receipt: Receipt = {
+      items: [],
+      totalSum: 0
+    };
 
     basketItems.forEach((o) => { this.increaseItemCount(items, o); } );
 
-    let calcItems = [];
-    Object.keys(items).forEach((name) => { calcItems.push({name, count: items[name]}); } );
+    Object.keys(items).forEach((name) => { receipt.items.push({name, count: items[name]}); } );
+    receipt.totalSum = this.calculateSum(receipt.items);
 
-    let totalSum = this.calculateSum(calcItems);
-
-    return {
-      items: calcItems,
-      totalSum
-    };
+    return receipt;
   }
 
-  private increaseItemCount(items, item) {
+  private increaseItemCount(items, item: string) {
     if (!items[item]) {
       items[item] = 1;
     } else {
