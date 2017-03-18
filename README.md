@@ -34,7 +34,7 @@ go to the http://localhost:3000/ in your browser
 
 
 
-for continuous ts development you can run
+for continuous ts development you can run in server folder
 ```bash
 tsc -w **/*.ts
 ```
