@@ -25,6 +25,14 @@ nodemon ./bin/www.js
 
 go to the http://localhost:4300/ in your browser
 
+for Angular 2 + Redux integration is needed additional step
+```bash
+npm start
+```
+
+go to the http://localhost:3000/ in your browser
+
+
 
 for continuous ts development you can run
 ```bash
@@ -33,6 +41,7 @@ tsc -w **/*.ts
 
 Based on @angularclass/angular2-webpack-starter + NodeJS Express with TypeScript
 
-Please note that Angular2 integration is not finished, but server side basic rendering is working on localhost:4300 address.
 
-                --- Rastislav Bertusek ---
+Please note that Angular2 + Redux integration is working on localhost:3000 and server side rendering is working on localhost:4300 address.
+
+--- Rastislav Bertusek ---
