@@ -25,7 +25,7 @@ nodemon ./bin/www.js
 
 go to the http://localhost:4300/ in your browser
 
-for Angular 2 + Redux integration is needed additional step
+for Angular 2 + Redux integration is needed additional step in 'nodejs-angular-starterkit' folder
 ```bash
 npm start
 ```
@@ -34,7 +34,7 @@ go to the http://localhost:3000/ in your browser
 
 
 
-for continuous ts development you can run in server folder
+for continuous ts development you can run in 'server' folder
 ```bash
 tsc -w **/*.ts
 ```
